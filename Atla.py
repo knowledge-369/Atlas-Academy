@@ -4,11 +4,11 @@ print("\tBem Vindo Ao Atlas Academy")         #Mensagem Para saber qual modulo e
 print("\t================================")
 
                                                         #inplementar a função para listar todo o conteudo
-                                                        #implementar a função para sai do programa
+                                                        #implementar a função para sair do programa
                                                         #corrigir falha de entrada da função do menu
                                                         #colocar os dicionario em uma clase só
  #Função De Menu Do usúario           
-def menu():
+def menu(): 
     print("\n======================================\n")
     print("1- Registrar Estudo \n") #criando o menu
     print("=======================================\n")
@@ -76,6 +76,7 @@ def check(escolha,self,d2):
               return True
     if escolha == 4:
            print("VocÊ Saiu")
+           return False
     else:
         print("Opção Inválida")
         return False
