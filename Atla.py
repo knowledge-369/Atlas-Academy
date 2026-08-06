@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                  
 print("\t=================================")
 print("\tBem Vindo Ao Atlas Academy")         #Mensagem Para saber qual modulo estamos
 print("\t================================")
@@ -17,13 +17,14 @@ def menu():
     print("3- Listar Estudo\n")
     print("=========================================\n")
     print("4- Sair\n")
-    entrada = int(input("Escolha Uma Opção: ")) #salvando a opção do usuario na variavel entrada
+    entrada = int(input("Escolha Uma Opção:")) #salvando a opção do usuario na variavel entrada
     return entrada #retornando a escolha do usuario para usar em outra função
 
 #criando uma classe para  objeto Atlas  para criar uma lista 
 class registro_estudo:
        def __init__ (self):
            self.dic = []
+           self.dic2 = []
 
 #cada função de op1 até op3  realiza uma ação após a opção do usuario op1(self): 
        def op1(self):
@@ -34,41 +35,51 @@ class registro_estudo:
               #verificando se todos os dados foram prenchidos
               if Registro != "" and Hora != ""  and Dia != "":
                            self.dic.append({"Materia":Registro, "Horario": Hora, "Data": Dia})  #atribuindo as informações para o dicionario
-                           print("Parabéns Você Realizou O Registro DO  Seu Estudo de Hoje")
+                           print("Parabéns Você Realizou O Registro DO  Seu Estudo de Hoje\n")
                            return self.dic
               else:
+                print("Você Não Concluiu Ou Não Escreveu Os Dados\n")
+                return True
 
-                 print("Você Não Concluiu Ou Não Escreveu Os Dados")
-       def op3(self):
-        print(f"{self.dic}")
 
-#criando mais uma classe para o objeto nots para criar uma lista e adcionar um dicionario dentro
-class Bloco_Notas:
-        def __init__(self):
-                self.dic2 = []
-#Função Para O Usuario Adcionar Uma Nota e Guardar Dentro de um dicionario
-        def op2(self):
+
+       #Função Para O Usuario Adcionar Uma Nota e Guardar Dentro de um dicionario
+       def op2(self):
                 print("Você Escolheu Escrever Uma Anotação\n")
                 nota = input("Escreva A Sua Anotação: ").strip()
                 if nota != "":
                         self.dic2.append({"Notas": nota})
+                        return self.dic2
                         print("A Sua Anotação Foi Salva")
                 else:
-                  print("Você Não Anotou Nada Na Nota") #vericando se o usuario Digitou algo na nota, se estiver vazio mostra o aviso
+                  print("Você Não Anotou Nada Na Nota") #vericando se o usuario Digitou algo na nota, se estiver vazio mostra o aviso 
+                  return True
 
+       def op3(self):
+                #percorrendo a lista
+                for i in self.dic:
+
+                        #percorrendo os valores da lista usando a função itemss para organizar os dados
+                        for chave,valor in i.items():
+                               print(f"{chave}: {valor}")
+
+                        for di2 in self.dic2:
+                                for nots,nota in di2.items():
+                                        print(f"{nots}: {nota}")
+      
 #Função Para O Usuario Sair Do Programa 
        
 
 
 #Função para verificar a escolha do usúario Para Registrar O Estudo
 
-def check(escolha,self,d2):
+def check(escolha,self):
     if escolha == 1: #verificando a escolha do usuario
               self.op1()
               return True
 
     elif  escolha == 2: #Verificando A Segunda Escolha do usúario
-              d2.op2()
+              self.op2()
               return True
 
     elif  escolha == 3:
@@ -82,13 +93,12 @@ def check(escolha,self,d2):
         return False
 #Atribuindo O Objeto 
 atlas = registro_estudo()
-nots = Bloco_Notas()
 
 
 while True:
         escolha = menu()   #pegando o valor retornado da função menu para usar em outra função
 
-        opcao =  check(escolha,atlas,nots)#pegando o valor retornado da opção do usúario e atribuindo a variavel opção, e passando o dicionario
+        opcao =  check(escolha,atlas)#pegando o valor retornado da opção do usúario e atribuindo a variavel opção, e passando o dicionario
         if opcao  == False: #verficando a opção retornada para ver se é falsa
                 break
 
