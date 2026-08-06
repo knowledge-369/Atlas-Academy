@@ -42,7 +42,6 @@ class registro_estudo:
                 return True
 
 
-
        #Função Para O Usuario Adcionar Uma Nota e Guardar Dentro de um dicionario
        def op2(self):
                 print("Você Escolheu Escrever Uma Anotação\n")
