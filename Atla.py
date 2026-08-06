@@ -48,8 +48,8 @@ class registro_estudo:
                 nota = input("Escreva A Sua Anotação: ").strip()
                 if nota != "":
                         self.dic2.append({"Notas": nota})
-                        return self.dic2
                         print("A Sua Anotação Foi Salva")
+                        return self.dic2
                 else:
                   print("Você Não Anotou Nada Na Nota") #vericando se o usuario Digitou algo na nota, se estiver vazio mostra o aviso 
                   return True
@@ -62,7 +62,7 @@ class registro_estudo:
                         for chave,valor in i.items():
                                print(f"{chave}: {valor}")
 
-                        for di2 in self.dic2:
+                for di2 in self.dic2:
                                 for nots,nota in di2.items():
                                         print(f"{nots}: {nota}")
       
