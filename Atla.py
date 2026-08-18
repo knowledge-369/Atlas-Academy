@@ -3,23 +3,37 @@ print("\t=================================")
 print("\tBem Vindo Ao Atlas Academy")         #Mensagem Para saber qual modulo estamos
 print("\t================================")
 
-                                                        #inplementar a função para listar todo o conteudo
-                                                        #implementar a função para sair do programa
+                                                    
                                                         #corrigir falha de entrada da função do menu
                                                         #colocar os dicionario em uma clase só
  #Função De Menu Do usúario           
 def menu(): 
-    print("\n======================================\n")
-    print("1- Registrar Estudo \n") #criando o menu
-    print("=======================================\n")
-    print("2- Adcionar Notas \n")
-    print("========================================\n")
-    print("3- Listar Estudo\n")
-    print("=========================================\n")
-    print("4- Sair\n")
-    entrada = int(input("Escolha Uma Opção:")) #salvando a opção do usuario na variavel entrada
-    return entrada #retornando a escolha do usuario para usar em outra função
+    while True:
+      print("\n======================================\n")
+      print("1- Registrar Estudo \n") #criando o menu
+      print("=======================================\n")
+      print("2- Adcionar Notas \n")
+      print("========================================\n")
+      print("3- Listar Estudo\n")
+      print("=========================================\n")
+      print("4- Sair\n")
 
+   
+      try:
+         entrada = int(input("Escolha Uma Opção:")) #salvando a opção do usuario na variavel entrada
+         #retornando a escolha do usuario para usar em outra função
+
+      except:
+
+           print("Erro Opção Invalida! Tente Novamente.")
+
+
+      if entrada == 1 or entrada == 2 or entrada == 3 or entrada == 5:
+             return entrada   
+      else:
+             print("Número invalido, Tente Novamente")
+             return True      
+            
 #criando uma classe para  objeto Atlas  para criar uma lista 
 class registro_estudo:
        def __init__ (self):
@@ -88,8 +102,8 @@ def check(escolha,self):
            print("VocÊ Saiu")
            return False
     else:
-        print("Opção Inválida")
-        return False
+        print("Opção Inválida! Tente Novamente!"),
+        return True
 #Atribuindo O Objeto 
 atlas = registro_estudo()
 
