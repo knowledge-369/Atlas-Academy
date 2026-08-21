@@ -3,7 +3,7 @@ print("\t=================================")
 print("\tBem Vindo Ao Atlas Academy")         #Mensagem Para saber qual modulo estamos
 print("\t================================")
                                                  #salvar as informaçoe em um arquivo txt
-                                                 #corrigir uma melhoria 
+                                                 #corrigir uma melhoria de dar espaço buffer no teclado na hora de criar o estudo 
                                                     
                                                       
                                                        
@@ -103,10 +103,28 @@ def check(escolha,self):
            return False
     else:
         print("Opção Inválida! Tente Novamente!"),
-        return True
+        return True 
+
+def arquivo(self):
+        for i in (self.dic):
+         for salv in (self.dic2):
+
+            with open("Rgistro.txt", "w", encoding= "utf-8")as arq:
+               arq.write(f"{i} {salv}")
+        
+
+
+
+
+
+
+
+
+
+
 #Atribuindo O Objeto 
 atlas = registro_estudo()
-
+arq = arquivo(atlas)
 
 while True:
         escolha = menu()   #pegando o valor retornado da função menu para usar em outra função
