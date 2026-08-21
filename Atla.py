@@ -2,10 +2,11 @@
 print("\t=================================")
 print("\tBem Vindo Ao Atlas Academy")         #Mensagem Para saber qual modulo estamos
 print("\t================================")
-
+                                                 #salvar as informaçoe em um arquivo txt
+                                                 #corrigir uma melhoria 
                                                     
-                                                        #corrigir falha de entrada da função do menu
-                                                        #colocar os dicionario em uma clase só
+                                                      
+                                                       
  #Função De Menu Do usúario           
 def menu(): 
     while True:
@@ -20,19 +21,18 @@ def menu():
 
    
       try:
-         entrada = int(input("Escolha Uma Opção:")) #salvando a opção do usuario na variavel entrada
-         #retornando a escolha do usuario para usar em outra função
+         entrada = int(input("Escolha Uma Opção:"))#salvando a opção do usuario na variavel entrada
+         if entrada == 1 or entrada == 2 or entrada == 3 or entrada == 4: #verificando se o uuario digitou as opçoe do menu
 
+                                   return entrada #retornando a escolha do usuario para usar em outra função
+         else:
+              print("Opção Inválida, Tente Novamente")
+                 
       except:
+        print("Erro Opção Invalida! Tente Novamente.")
+            
 
-           print("Erro Opção Invalida! Tente Novamente.")
-
-
-      if entrada == 1 or entrada == 2 or entrada == 3 or entrada == 5:
-             return entrada   
-      else:
-             print("Número invalido, Tente Novamente")
-             return True      
+          
             
 #criando uma classe para  objeto Atlas  para criar uma lista 
 class registro_estudo:
@@ -98,7 +98,7 @@ def check(escolha,self):
     elif  escolha == 3:
               self.op3()
               return True
-    if escolha == 4:
+    elif escolha == 4:
            print("VocÊ Saiu")
            return False
     else:
